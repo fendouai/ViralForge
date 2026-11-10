@@ -123,7 +123,8 @@ Re-render the three demo films (requires FFmpeg and a running dev server):
 npm run render       # → public/media/*.mp4 + covers
 ```
 
-Analyze your own local video (no API key):
+Analyze your own local video (no API key). Requires FFmpeg, Python 3.10+,
+`numpy` and `opencv-python` (`pip install -r scripts/requirements.txt`):
 
 ```bash
 node cli/viralforge.mjs analyze ./reference.mp4 --out dna.json
