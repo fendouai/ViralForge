@@ -1,0 +1,424 @@
+:root {
+  --sans: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --mono: "SF Mono", "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 720px;
+  height: 1280px;
+  overflow: hidden;
+  background: #000;
+}
+
+.film {
+  position: relative;
+  width: 720px;
+  height: 1280px;
+  overflow: hidden;
+  background: var(--film-ink);
+  color: var(--paper);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.film-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(540px 480px at 78% 12%, color-mix(in srgb, var(--accent) 26%, transparent), transparent 70%),
+    radial-gradient(620px 520px at 12% 88%, color-mix(in srgb, var(--soft) 30%, transparent), transparent 72%),
+    linear-gradient(165deg, color-mix(in srgb, var(--film-ink) 88%, #fff 6%), var(--film-ink) 55%, #050505 100%);
+}
+
+.film-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 90px 90px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 75%);
+  opacity: 0.55;
+}
+
+.film-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 90% at 50% 40%, transparent 45%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+.film-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.film-top {
+  position: absolute;
+  top: 36px;
+  left: 44px;
+  right: 44px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  opacity: 0.5;
+  z-index: 5;
+}
+
+.film-progress {
+  position: absolute;
+  top: 66px;
+  left: 44px;
+  right: 44px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  z-index: 5;
+}
+
+.film-progress i {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  box-shadow: 0 0 16px var(--accent);
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.scene-art {
+  position: absolute;
+  right: -30px;
+  bottom: 150px;
+  width: 500px;
+  filter: drop-shadow(0 40px 70px rgba(0, 0, 0, 0.55));
+}
+
+.kind-hook .scene-art {
+  right: -20px;
+  bottom: 180px;
+  width: 460px;
+}
+
+.kind-problem .scene-art {
+  right: -90px;
+  bottom: 40px;
+  width: 640px;
+  filter: blur(1px) drop-shadow(0 40px 70px rgba(0, 0, 0, 0.5));
+}
+
+.kind-product .scene-art {
+  right: 60px;
+  bottom: 190px;
+  width: 520px;
+}
+
+.kind-split .scene-art,
+.kind-mood .scene-art {
+  display: none;
+}
+
+.kind-cta .scene-art {
+  right: 40px;
+  bottom: 170px;
+  width: 420px;
+}
+
+.scene-index {
+  position: absolute;
+  top: 104px;
+  right: 44px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  opacity: 0.35;
+}
+
+.film-kicker {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.scene-hook {
+  position: absolute;
+  top: 196px;
+  left: 56px;
+  right: 56px;
+}
+
+.big-line {
+  font-size: 108px;
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+  font-weight: 700;
+  text-wrap: balance;
+  text-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+.big-line.small {
+  font-size: 76px;
+  margin-top: 6px;
+}
+
+.film-rule {
+  width: 180px;
+  height: 6px;
+  margin-top: 38px;
+  background: var(--accent);
+  transform-origin: left center;
+}
+
+.scene-problem {
+  position: absolute;
+  top: 220px;
+  left: 56px;
+  right: 56px;
+}
+
+.problem-line {
+  position: relative;
+  margin-bottom: 18px;
+  font-size: 106px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+}
+
+.problem-line span {
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+
+.split-foot {
+  position: absolute;
+  left: 22px;
+  bottom: 22px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  opacity: 0.38;
+}
+
+.scene-product {
+  position: absolute;
+  inset: 0;
+}
+
+.product-ring {
+  position: absolute;
+  left: 120px;
+  top: 328px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  box-shadow: inset 0 0 120px color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+.product-ring.ring-2 {
+  left: 60px;
+  top: 268px;
+  width: 620px;
+  height: 620px;
+  border-style: dashed;
+  opacity: 0.5;
+}
+
+.product-copy {
+  position: absolute;
+  left: 56px;
+  top: 214px;
+  right: 56px;
+}
+
+.product-stats {
+  position: absolute;
+  left: 56px;
+  bottom: 290px;
+  display: flex;
+  gap: 10px;
+}
+
+.product-stats span {
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  padding: 8px 12px;
+  border-radius: 999px;
+}
+
+.scene-split {
+  position: absolute;
+  top: 180px;
+  left: 40px;
+  right: 40px;
+}
+
+.split-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.split-panel {
+  position: relative;
+  height: 780px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #101010;
+}
+
+.split-panel.before {
+  background: linear-gradient(170deg, #202020, #0b0b0b);
+}
+
+.split-panel.after {
+  background:
+    radial-gradient(90% 70% at 50% 0%, color-mix(in srgb, var(--accent) 24%, transparent), transparent 70%),
+    linear-gradient(170deg, color-mix(in srgb, var(--accent) 10%, #111 90%), #0b0b0b);
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.split-art {
+  position: absolute;
+  left: 50%;
+  bottom: 130px;
+  width: 290px;
+  transform: translateX(-50%);
+}
+
+.split-panel.before .split-art {
+  filter: grayscale(1) brightness(0.55) contrast(0.9);
+  width: 260px;
+  bottom: 150px;
+}
+
+.split-label {
+  position: absolute;
+  top: 24px;
+  left: 22px;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.split-num {
+  position: absolute;
+  top: 26px;
+  right: 20px;
+  font-family: var(--mono);
+  font-size: 12px;
+  opacity: 0.45;
+}
+
+.scene-mood {
+  position: absolute;
+  top: 250px;
+  left: 56px;
+  right: 56px;
+  text-align: center;
+}
+
+.scene-mood .big-line {
+  font-size: 82px;
+}
+
+.scene-mood .film-kicker {
+  text-align: center;
+}
+
+.mood-glow {
+  position: absolute;
+  left: 50%;
+  top: 220px;
+  width: 700px;
+  height: 700px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 34%, transparent), transparent 65%);
+  filter: blur(20px);
+  z-index: -1;
+}
+
+.film-caption {
+  position: absolute;
+  left: 48px;
+  right: 48px;
+  bottom: 108px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: rgba(6, 6, 6, 0.62);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  z-index: 4;
+}
+
+.film-caption i {
+  width: 4px;
+  align-self: stretch;
+  background: var(--accent);
+  border-radius: 2px;
+  flex: none;
+}
+
+.film-caption span {
+  flex: 1;
+}
+
+.film-caption b {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  font-weight: 400;
+  opacity: 0.55;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 3px 5px;
+  flex: none;
+}
+
+.film-bottom {
+  position: absolute;
+  left: 44px;
+  right: 44px;
+  bottom: 38px;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  opacity: 0.4;
+  z-index: 4;
+}

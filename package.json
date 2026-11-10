@@ -1,0 +1,40 @@
+{
+  "name": "viralforge",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22.15"
+  },
+  "type": "module",
+  "description": "ViralForge — deconstruct, replicate and batch-variant viral short videos.",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173",
+    "start": "vite preview --host 127.0.0.1 --port 4173",
+    "typecheck": "tsc --noEmit",
+    "audio": "python3 scripts/make_audio.py",
+    "render": "node scripts/render-cases.mjs",
+    "test": "node tests/smoke.mjs",
+    "test:media": "node tests/media.mjs",
+    "test:mcp": "node tests/mcp.mjs",
+    "test:all": "npm run test && npm run test:media && npm run test:mcp",
+    "pretest": "npm run build"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.6.0",
+    "playwright": "^1.55.0",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.0"
+  },
+  "bin": {
+    "viralforge": "./cli/viralforge.mjs"
+  }
+}
