@@ -61,7 +61,7 @@ node scripts/render-cases.mjs   # 逐 case：
 
 ## 5. 自测结果
 
-最近一次：类型检查 / 构建通过；E2E **18/18**；3 条成片媒体校验 **18/18**；MCP 4 项通过。
+最近一次：类型检查 / 构建通过；E2E **21/21**；3 条成片媒体校验 **18/18**；MCP 4 项通过。
 
 ```bash
 npm run typecheck   # 通过

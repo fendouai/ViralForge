@@ -73,6 +73,12 @@ async function main() {
     check('分析日志完成', await page.getByText('生成爆款基因').first().isVisible());
     await page.screenshot({ path: path.join(OUT, 'studio-report.png') });
 
+    const [dnaDownload] = await Promise.all([
+      page.waitForEvent('download'),
+      page.getByRole('button', { name: /dna\.json/ }).click(),
+    ]);
+    check('dna.json 可下载', dnaDownload.suggestedFilename().endsWith('.json'), dnaDownload.suggestedFilename());
+
     await page.getByRole('button', { name: /用这条基因复刻/ }).first().click();
     await page.getByRole('button', { name: /生成复刻工程/ }).waitFor();
     await page.getByRole('button', { name: /生成复刻工程/ }).click();
@@ -86,6 +92,12 @@ async function main() {
     check('成片可播放', true);
     await page.screenshot({ path: path.join(OUT, 'studio-replica.png') });
 
+    const [vfmlDownload] = await Promise.all([
+      page.waitForEvent('download'),
+      page.getByRole('button', { name: /导出 VFML/ }).click(),
+    ]);
+    check('VFML 工程可导出', vfmlDownload.suggestedFilename().endsWith('.json'), vfmlDownload.suggestedFilename());
+
     await page.getByRole('button', { name: /应用/ }).click();
     check('dirty 镜头标记', await page.getByText(/DIRTY/).first().isVisible());
 
@@ -95,6 +107,12 @@ async function main() {
     check('10 条变体生成', (await page.locator('.variant-card').count()) === 10);
     check('成本账单可见', await page.getByText('成本账单').first().isVisible());
     await page.screenshot({ path: path.join(OUT, 'studio-variants.png') });
+
+    const [csvDownload] = await Promise.all([
+      page.waitForEvent('download'),
+      page.getByRole('button', { name: /导出清单/ }).click(),
+    ]);
+    check('变体清单可导出', csvDownload.suggestedFilename().endsWith('.csv'), csvDownload.suggestedFilename());
 
     await page.goto(`${BASE}/#/report/glow`, { waitUntil: 'networkidle' });
     check('报告页可访问', (await page.locator('h1').first().innerText()).includes('熬夜脸'));
