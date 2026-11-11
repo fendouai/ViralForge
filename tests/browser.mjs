@@ -21,6 +21,6 @@ export function findBrowser() {
 
 export async function launch() {
   const executablePath = findBrowser();
-  if (!executablePath) throw new Error('No Chromium found; run npx playwright install chromium');
-  return chromium.launch({ executablePath });
+  // On Linux/CI, use Playwright's bundled browser; on this Mac, prefer the cached build.
+  return executablePath ? chromium.launch({ executablePath }) : chromium.launch();
 }

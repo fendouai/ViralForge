@@ -50,7 +50,7 @@ ViralForge 是一个 Agent-native 的短视频拆解与复刻工作台。它不�
 | Node.js 22.15+ | ✅ | Web 应用 / 构建 |
 | npm | ✅ | 安装依赖 |
 | FFmpeg + ffprobe | 可选 | 重新渲染、媒体校验、CLI 分析 |
-| Python 3.9+ / numpy / opencv-python | 可选 | `viralforge analyze` |
+| Python 3.9+ / numpy / opencv-python-headless | 可选 | `viralforge analyze` |
 | Chromium（Playwright） | 可选 | 重新渲染、E2E 测试 |
 | 模型 / 平台 API Key | ❌ 不需要 | — |
 
@@ -106,6 +106,16 @@ npm run test
 npm run test:media
 npm run test:mcp
 ```
+
+## 开源发布
+
+- 版本：v0.1.0 · 2026-11-11
+- 许可证：Apache-2.0
+- 仓库名：`ViralForge`
+- [更新日志](./CHANGELOG.md) · [发布说明](./docs/RELEASE-NOTES-v0.1.0.md) · [发布流程](./docs/RELEASING.md)
+- [贡献指南](./CONTRIBUTING.md) · [安全策略](./SECURITY.md) · [行为准则](./CODE_OF_CONDUCT.md)
+
+发布包用 `npm run release:archive` 生成，只包含 git 跟踪的源码，不含 `node_modules` 和构建产物。
 
 ## 许可证
 

@@ -135,11 +135,10 @@ async function main() {
   if (!cases.length) throw new Error(`Unknown case: ${target}`);
 
   const executablePath = findBrowser();
-  if (!executablePath) {
-    throw new Error('No Chromium found. Run `npx playwright install chromium` first.');
-  }
-  console.log(`Chromium: ${executablePath}`);
-  const browser = await chromium.launch({ executablePath });
+  console.log(`Chromium: ${executablePath ?? 'Playwright bundled'}`);
+  const browser = executablePath
+    ? await chromium.launch({ executablePath })
+    : await chromium.launch();
   try {
     for (const study of cases) {
       console.log(`Rendering ${study.id} (${study.duration}s @ ${FPS}fps)…`);

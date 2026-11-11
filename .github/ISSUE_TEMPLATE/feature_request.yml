@@ -1,0 +1,37 @@
+name: Feature request
+description: Propose a capability, provider adapter or workflow improvement.
+title: "feat: "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ViralForge is local-first and Agent-native. Please explain the user problem
+        before the implementation. Face-swap and unlicensed footage features are out of scope.
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: Who is blocked, and what are they trying to do?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What should happen? Which layer (deconstruct / replicate / variants) does it touch?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Boundaries
+      options:
+        - label: This does not add real-person face swapping or unlicensed footage redistribution.
+          required: true
+        - label: This does not require secrets in the browser.
+          required: true

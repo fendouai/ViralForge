@@ -1,0 +1,12 @@
+ViralForge
+Copyright 2026 ViralForge contributors
+
+This product includes original work only:
+
+- Product illustrations (serum, tote, lamp) are original SVG authored for this project.
+- Demo films are rendered locally from original DOM compositions via Playwright and FFmpeg.
+- Demo BGM beds are synthesized locally with numpy; no third-party samples.
+- Reference frames are self-made simulations and are labelled as such in the UI.
+- No Hypit code, AGPL code, third-party footage, music, or portrait is included.
+
+The name "ViralForge" and the project identity are used for this open-source project.

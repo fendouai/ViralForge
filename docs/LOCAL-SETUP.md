@@ -19,7 +19,7 @@ ViralForge 的 v0.1 demo **零 Key 可运行**：
 | npm | ✅ 必需 | 安装依赖 |
 | FFmpeg + ffprobe | ○ 可选 | 重新渲染成片、媒体校验、CLI 分析 |
 | Python 3.9+ | ○ 可选 | `viralforge analyze` 本地结构分析 |
-| numpy + opencv-python | ○ 可选 | 同上（`pip install -r scripts/requirements.txt`） |
+| numpy + opencv-python-headless | ○ 可选 | 同上（`pip install -r scripts/requirements.txt`） |
 | Chromium（Playwright） | ○ 可选 | `npm run render` 逐帧渲染、E2E 测试 |
 | 任何模型 / 平台 API Key | ❌ 不需要 | — |
 

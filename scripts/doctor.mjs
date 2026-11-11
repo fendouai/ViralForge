@@ -46,13 +46,16 @@ add('Python 3（CLI 结构分析）', Boolean(python), python || 'optional · no
 
 if (python) {
   const libs = capture('python3', ['-c', 'import numpy,cv2;print(numpy.__version__, cv2.__version__)']);
-  add('numpy + opencv-python（CLI 结构分析）', Boolean(libs), libs || 'optional · pip install -r scripts/requirements.txt', false);
+  add('numpy + opencv-python-headless（CLI 结构分析）', Boolean(libs), libs || 'optional · pip install -r scripts/requirements.txt', false);
 }
 
-const cache = path.join(os.homedir(), 'Library/Caches/ms-playwright');
-const chromium = fs.existsSync(cache)
-  ? fs.readdirSync(cache).some((entry) => entry.startsWith('chromium'))
-  : false;
+const caches = [
+  path.join(os.homedir(), 'Library/Caches/ms-playwright'),
+  path.join(os.homedir(), '.cache', 'ms-playwright'),
+];
+const chromium = caches.some(
+  (cache) => fs.existsSync(cache) && fs.readdirSync(cache).some((entry) => entry.startsWith('chromium')),
+);
 add('Chromium（重新渲染 / E2E 测试）', chromium, chromium ? 'Playwright cache found' : 'optional · npx playwright install chromium', false);
 
 console.log('\nViralForge · 本地运行自检\n');

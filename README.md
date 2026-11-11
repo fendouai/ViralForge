@@ -8,13 +8,14 @@
   <a href="#quickstart"><strong>Quickstart</strong></a> ·
   <a href="#how-it-works"><strong>How it works</strong></a> ·
   <a href="#the-three-layers"><strong>Three layers</strong></a> ·
+  <a href="#open-source-release"><strong>Release</strong></a> ·
   <a href="./README.zh-CN.md"><strong>简体中文</strong></a>
 </p>
 
 <p align="center">
   <img alt="License" src="https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square" />
   <img alt="Node" src="https://img.shields.io/badge/node-22.15%2B-5FA04E?style=flat-square" />
-  <img alt="Status" src="https://img.shields.io/badge/status-MVP-C9FF3D?style=flat-square" />
+  <img alt="Status" src="https://img.shields.io/badge/status-v0.1.0-C9FF3D?style=flat-square" />
 </p>
 
 > Paste a viral link → get a **Viral DNA report** → replace the product and script → get an **editable project**, not just an MP4 → generate **10 costed variants** for A/B testing.
@@ -130,7 +131,7 @@ npm run render       # → public/media/*.mp4 + covers
 ```
 
 Analyze your own local video (no API key). Requires FFmpeg, Python 3.9+,
-`numpy` and `opencv-python` (`pip install -r scripts/requirements.txt`):
+`numpy` and `opencv-python-headless` (`pip install -r scripts/requirements.txt`):
 
 ```bash
 node cli/viralforge.mjs analyze ./reference.mp4 --out dna.json
@@ -167,7 +168,7 @@ Skill: [`skills/viralforge/SKILL.md`](./skills/viralforge/SKILL.md).
 | Node.js 22.15+ | ✅ | web app, build |
 | npm | ✅ | install |
 | FFmpeg + ffprobe | optional | re-render, media checks, CLI analysis |
-| Python 3.9+ / numpy / opencv-python | optional | `viralforge analyze` |
+| Python 3.9+ / numpy / opencv-python-headless | optional | `viralforge analyze` |
 | Chromium (Playwright) | optional | `npm run render`, E2E tests |
 | model / platform API keys | ❌ none | — |
 
@@ -279,10 +280,26 @@ A 3-minute click path (and what to say on each beat) is in [`docs/DEMO.md`](./do
 
 ## Status
 
-**MVP.** The demo's semantic insights are curated, the replica films are pre-rendered, and batch
-variants produce scripts/covers/cost estimates. Model calls and batch rendering require a key or
-a worker. Everything else — the studio, analysis CLI, report pages, VFML export, cost ledger —
+**v0.1.0 · MVP.** The demo's semantic insights are curated, the replica films are pre-rendered, and
+batch variants produce scripts/covers/cost estimates. Model calls and batch rendering require a key
+or a worker. Everything else — the studio, analysis CLI, report pages, VFML export, cost ledger —
 runs end to end.
+
+## Open-source release
+
+- **Version**: v0.1.0 · 2026-11-11
+- **License**: Apache-2.0
+- **Repository name**: `ViralForge`
+- [CHANGELOG](./CHANGELOG.md) · [Release notes](./docs/RELEASE-NOTES-v0.1.0.md) · [Releasing guide](./docs/RELEASING.md)
+- [Contributing](./CONTRIBUTING.md) · [Security](./SECURITY.md) · [Code of Conduct](./CODE_OF_CONDUCT.md)
+
+The release archive is built with `npm run release:archive` and contains the tracked source
+(no `node_modules`, no build output).
+
+## Contributing
+
+Issues and PRs are welcome. Start with `CONTRIBUTING.md`; run `npm run doctor` and the test
+commands before opening a PR. No face swap, no unlicensed footage, no secrets in the client.
 
 ## License
 

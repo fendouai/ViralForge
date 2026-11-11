@@ -7,7 +7,7 @@
     "node": ">=22.15"
   },
   "type": "module",
-  "description": "ViralForge — deconstruct, replicate and batch-variant viral short videos.",
+  "description": "ViralForge — deconstruct, replicate and batch-variant viral short videos. Local-first, zero-key demo, Apache-2.0.",
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 5173",
     "build": "tsc --noEmit && vite build",
@@ -21,7 +21,8 @@
     "test:mcp": "node tests/mcp.mjs",
     "test:all": "npm run test && npm run test:media && npm run test:mcp",
     "pretest": "npm run build",
-    "doctor": "node scripts/doctor.mjs"
+    "doctor": "node scripts/doctor.mjs",
+    "release:archive": "sh scripts/archive-release.sh"
   },
   "dependencies": {
     "react": "^19.1.0",
@@ -37,5 +38,17 @@
   },
   "bin": {
     "viralforge": "./cli/viralforge.mjs"
-  }
+  },
+  "author": "ViralForge contributors",
+  "keywords": [
+    "viral-video",
+    "short-video",
+    "video-editing",
+    "ai-agents",
+    "mcp",
+    "ffmpeg",
+    "video-generation",
+    "ugc",
+    "advertising"
+  ]
 }
