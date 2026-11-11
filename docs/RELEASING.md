@@ -57,8 +57,11 @@ gh release create v0.1.0 \
 Checklist:
 
 - [ ] Repository is public and named ViralForge
-- [ ] Description matches README one-liner
-- [ ] Topics: `ai-agents`, `video`, `short-video`, `mcp`, `ffmpeg`, `apache-2.0`
+- [ ] Description matches the README one-liner (see `docs/GITHUB-METADATA.md`)
+- [ ] Topics applied: `viral-video`, `viral-video-replication`, `video-script-deconstruction`,
+      `one-click-replication`, `ai-agent`, `mcp`, `claude-code`, `ffmpeg`, `ugc-ads` (full list in
+      `docs/GITHUB-METADATA.md`)
+- [ ] Social preview uses `docs/en/social-preview.jpg`
 - [ ] License detected as Apache-2.0
 - [ ] Security policy visible
 - [ ] Release assets uploaded

@@ -7,7 +7,7 @@
     "node": ">=22.15"
   },
   "type": "module",
-  "description": "ViralForge — deconstruct, replicate and batch-variant viral short videos. Local-first, zero-key demo, Apache-2.0.",
+  "description": "Agent-native viral video studio: one-click replicate viral short videos, deconstruct video scripts into a Viral DNA report, and generate 10 costed variants. Skill + MCP + CLI, local-first, Apache-2.0.",
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 5173",
     "build": "tsc --noEmit && vite build",
@@ -16,10 +16,12 @@
     "typecheck": "tsc --noEmit",
     "audio": "python3 scripts/make_audio.py",
     "render": "node scripts/render-cases.mjs",
+    "docs:images": "node scripts/render-docs-images.mjs",
     "test": "node tests/smoke.mjs",
+    "test:readme": "node tests/readme.mjs",
     "test:media": "node tests/media.mjs",
     "test:mcp": "node tests/mcp.mjs",
-    "test:all": "npm run test && npm run test:media && npm run test:mcp",
+    "test:all": "npm run test:readme && npm run test && npm run test:media && npm run test:mcp",
     "pretest": "npm run build",
     "doctor": "node scripts/doctor.mjs",
     "release:archive": "sh scripts/archive-release.sh"
@@ -42,13 +44,33 @@
   "author": "ViralForge contributors",
   "keywords": [
     "viral-video",
+    "viral-video-replication",
     "short-video",
+    "video-script",
+    "video-script-deconstruction",
+    "one-click-replication",
+    "video-remix",
     "video-editing",
+    "ai-agent",
     "ai-agents",
+    "agent-native",
     "mcp",
+    "mcp-server",
+    "claude-code",
     "ffmpeg",
     "video-generation",
     "ugc",
-    "advertising"
-  ]
+    "ugc-ads",
+    "advertising",
+    "content-repurposing",
+    "viral-marketing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fendouai/ViralForge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fendouai/ViralForge/issues"
+  },
+  "homepage": "https://github.com/fendouai/ViralForge#readme"
 }
