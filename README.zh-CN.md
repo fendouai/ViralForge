@@ -41,10 +41,27 @@ ViralForge 是一个 Agent-native 的短视频拆解与复刻工作台。它不�
    商品参考图锁每个镜头；输出 VFML 工程 + 素材 + 字幕 + 分镜表 + MP4。
 3. **批量变体**：一条命令 10 个版本，只重生成 dirty 镜头，镜头级并行，每条标成本。
 
+## 运行要求与外部 Key
+
+**不需要任何外部 API Key。** 3 条成片随仓库提供，demo 可完全离线运行。
+
+| 依赖 | 是否必需 | 用途 |
+| --- | --- | --- |
+| Node.js 22.15+ | ✅ | Web 应用 / 构建 |
+| npm | ✅ | 安装依赖 |
+| FFmpeg + ffprobe | 可选 | 重新渲染、媒体校验、CLI 分析 |
+| Python 3.9+ / numpy / opencv-python | 可选 | `viralforge analyze` |
+| Chromium（Playwright） | 可选 | 重新渲染、E2E 测试 |
+| 模型 / 平台 API Key | ❌ 不需要 | — |
+
+代码不读取 OpenAI / 可灵 / 抖音 / 小红书 等任何 Key。详细说明见
+[`docs/LOCAL-SETUP.md`](./docs/LOCAL-SETUP.md)。
+
 ## 快速开始
 
 ```bash
 npm install
+npm run doctor       # 可选：检查本机依赖
 npm run dev          # http://127.0.0.1:5173
 npm run build
 npm run preview      # http://127.0.0.1:4173

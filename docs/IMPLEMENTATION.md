@@ -16,6 +16,11 @@
 | 报告页 | ✅ | 独立 hash 路由，可分享；DNA JSON 可下载/复制 |
 | 测试 | ✅ | Playwright E2E + ffprobe 媒体校验 + MCP 握手测试 |
 
+## 1.1 零 Key 运行
+
+本地 demo 不读取任何模型 / 平台 Key；3 条成片随仓库提供，结构分析在本地完成。
+`npm run doctor` 可检查依赖并打印「外部 API Key：不需要」。
+
 ## 2. 技术栈
 
 - Vite 7 + React 19 + TypeScript，手写 CSS，无 UI 框架。

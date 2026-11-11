@@ -117,13 +117,19 @@ npm run build
 npm run preview      # http://127.0.0.1:4173
 ```
 
+Check local prerequisites (optional):
+
+```bash
+npm run doctor
+```
+
 Re-render the three demo films (requires FFmpeg and a running dev server):
 
 ```bash
 npm run render       # → public/media/*.mp4 + covers
 ```
 
-Analyze your own local video (no API key). Requires FFmpeg, Python 3.10+,
+Analyze your own local video (no API key). Requires FFmpeg, Python 3.9+,
 `numpy` and `opencv-python` (`pip install -r scripts/requirements.txt`):
 
 ```bash
@@ -151,6 +157,22 @@ Tools: `list_cases`, `get_case`, `analyze_video`, `build_project`.
 Skill: [`skills/viralforge/SKILL.md`](./skills/viralforge/SKILL.md).
 
 ---
+
+## Requirements & keys
+
+**No external API keys.** The demo ships with the three rendered MP4s and runs fully offline.
+
+| Requirement | Needed? | Used for |
+| --- | --- | --- |
+| Node.js 22.15+ | ✅ | web app, build |
+| npm | ✅ | install |
+| FFmpeg + ffprobe | optional | re-render, media checks, CLI analysis |
+| Python 3.9+ / numpy / opencv-python | optional | `viralforge analyze` |
+| Chromium (Playwright) | optional | `npm run render`, E2E tests |
+| model / platform API keys | ❌ none | — |
+
+The app never reads `OPENAI_API_KEY`, `DASHSCOPE_API_KEY`, platform cookies, or any `VITE_*` secret.
+Detailed setup and troubleshooting: [`docs/LOCAL-SETUP.md`](./docs/LOCAL-SETUP.md).
 
 ## VFML: word-anchored video projects
 
