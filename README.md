@@ -39,6 +39,25 @@ documentation and agent surfaces are English-first.
 
 ---
 
+## Watch the demos
+
+Three 13–15s English cuts. Click a poster to play the MP4 in your browser — no sign-in, no
+platform footage.
+
+<p align="center">
+  <a href="https://cdn.jsdelivr.net/gh/fendouai/ViralForge@main/public/media/en/glow.mp4"><img src="./docs/en/demo-glow.jpg" alt="Watch the 15-second GLOW LAB English demo" width="250" /></a>
+  <a href="https://cdn.jsdelivr.net/gh/fendouai/ViralForge@main/public/media/en/tote.mp4"><img src="./docs/en/demo-tote.jpg" alt="Watch the 14-second AER English demo" width="250" /></a>
+  <a href="https://cdn.jsdelivr.net/gh/fendouai/ViralForge@main/public/media/en/lamp.mp4"><img src="./docs/en/demo-lamp.jpg" alt="Watch the 13-second MORI English demo" width="250" /></a>
+</p>
+
+<p align="center"><sub>GLOW LAB · 15s &nbsp;·&nbsp; AER · 14s &nbsp;·&nbsp; MORI · 13s</sub></p>
+
+Prefer the reasoning? The full DNA breakdowns, replica scripts and variant matrices are in
+[Case studies](#case-studies). Every clip is a self-made, AI-labelled demo; the reference footage is
+never redistributed.
+
+---
+
 ## Why ViralForge
 
 Operators already deconstruct viral videos by hand: pause on the first three seconds, guess the
@@ -452,14 +471,15 @@ See [`docs/en/COMPLIANCE.md`](./docs/en/COMPLIANCE.md) for the full safety notes
 ```text
 src/                  Web studio (Vite + React + TS)
 src/render/           Film render template (DOM -> frames)
-scripts/              analyze.py, make_audio.py, render-cases.mjs
-public/media/         Three rendered films + covers
+scripts/              analyze.py, make_audio.py, render-cases.mjs, render-demo-posters.mjs
+public/media/         Three films + covers; en/ = English cuts
 cli/                  viralforge CLI
 mcp/                  MCP stdio server
 skills/viralforge/    Agent Skill
 tests/                E2E, media, MCP tests
 docs/                 PLAN, IMPLEMENTATION, OPEN-QUESTIONS
-docs/en/              English docs, README artwork, social preview
+docs/en/              English docs, README artwork, posters, social preview
+docs/zh/              Chinese README posters
 ```
 
 ## Test
@@ -476,7 +496,8 @@ npm run test:readme # English README, artwork and metadata checks
 ## Demo script
 
 A 3-minute click path with what to say on each beat is in [`docs/en/DEMO.md`](./docs/en/DEMO.md).
-The README artwork can be regenerated with `npm run docs:images` (Playwright).
+The README artwork and video posters can be regenerated with `npm run docs:images` and
+`npm run docs:posters`; the English cuts with `npm run render:en` (FFmpeg + dev server).
 
 ## Status and roadmap
 

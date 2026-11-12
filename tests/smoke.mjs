@@ -132,6 +132,12 @@ async function main() {
     await page.goto(`${BASE}/#/docs`, { waitUntil: 'networkidle' });
     check('文档页可访问', (await page.locator('h1').first().innerText()).includes('ViralForge 文档'));
 
+    await page.goto(`${BASE}/render.html?case=glow&lang=en`, { waitUntil: 'networkidle' });
+    await page.waitForFunction(() => window.__filmReady === true);
+    const filmText = await page.locator('#film').innerText();
+    check('英文成片可访问', filmText.includes('Overnight skin'));
+    check('英文成片无中文', !/[\u4e00-\u9fff]/.test(filmText));
+
     const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, isMobile: true });
     await mobile.goto(`${BASE}/`, { waitUntil: 'networkidle' });
     const overflow = await mobile.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);

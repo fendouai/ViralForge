@@ -34,6 +34,23 @@
 
 ---
 
+## 看演示
+
+三条 13–15 秒中文成片。点封面直接在浏览器播放，无需登录，也不搬运平台原片。
+
+<p align="center">
+  <a href="https://cdn.jsdelivr.net/gh/fendouai/ViralForge@main/public/media/glow.mp4"><img src="./docs/zh/demo-glow.jpg" alt="观看 GLOW LAB 15 秒演示" width="250" /></a>
+  <a href="https://cdn.jsdelivr.net/gh/fendouai/ViralForge@main/public/media/tote.mp4"><img src="./docs/zh/demo-tote.jpg" alt="观看 AER 14 秒演示" width="250" /></a>
+  <a href="https://cdn.jsdelivr.net/gh/fendouai/ViralForge@main/public/media/lamp.mp4"><img src="./docs/zh/demo-lamp.jpg" alt="观看 MORI 13 秒演示" width="250" /></a>
+</p>
+
+<p align="center"><sub>GLOW LAB · 15s &nbsp;·&nbsp; AER · 14s &nbsp;·&nbsp; MORI · 13s</sub></p>
+
+想看拆解逻辑？完整 DNA、复刻脚本和 10 个变体在[案例](#案例)。所有成片均为自制素材并带 AI 标识；
+参考片只用于分析，不进入成片。
+
+---
+
 ## 为什么
 
 商家和运营每天都在手工拆解爆款：暂停在前 3 秒、猜钩子、记镜头、抄文案、找 BGM、用自己的产品翻拍。
@@ -399,14 +416,15 @@ node cli/viralforge.mjs report dna.json
 ```text
 src/                  Web 工作台（Vite + React + TS）
 src/render/           成片渲染模板（DOM -> 帧）
-scripts/              analyze.py、make_audio.py、render-cases.mjs
-public/media/         3 条成片 + 封面
+scripts/              analyze.py、make_audio.py、render-cases.mjs、render-demo-posters.mjs
+public/media/         3 条成片 + 封面；en/ = 3 条英文成片
 cli/                  viralforge CLI
 mcp/                  MCP stdio server
 skills/viralforge/    Agent Skill
 tests/                E2E、媒体、MCP 测试
 docs/                 PLAN、IMPLEMENTATION、OPEN-QUESTIONS
 docs/en/              英文 README 视觉素材
+docs/zh/              中文 README 成片封面
 ```
 
 ## 测试

@@ -39,6 +39,37 @@ const CONTENT: Record<string, SceneContent[]> = {
   ],
 };
 
+
+const CONTENT_EN: Record<string, SceneContent[]> = {
+  glow: [
+    { kind: 'hook', lines: ['Overnight skin,', 'still fixable.'], sub: 'GLOW LAB · 5% NIACINAMIDE', caption: 'Stop paying the stupid tax.' },
+    { kind: 'problem', lines: ['Dull', 'Creasing', 'No glow'], sub: 'NOT YOUR FOUNDATION', caption: 'Your skin is not underfed.' },
+    { kind: 'product', lines: ['5%', 'Niacinamide'], sub: 'MICRO-ENCAPSULATED · SLOW RELEASE', caption: 'Not a new face. New light.', stats: ['5%', 'MICRO', '7 DAYS'] },
+    { kind: 'split', lines: ['Day 1', 'Day 7'], caption: 'Seven days. Light back.', labels: ['Day 1', 'Day 7'] },
+    { kind: 'cta', lines: ['Try a sample,', 'then decide.'], sub: 'GLOW LAB', caption: 'Tap below. Try one first.' },
+  ],
+  tote: [
+    { kind: 'hook', lines: ['Fits a 14-inch', 'laptop,', 'not the office.'], sub: 'AER · COMMUTER TOTE', caption: 'Every bag that fits a 14-inch laptop looks like it is headed to a meeting.' },
+    { kind: 'problem', lines: ['Commute', 'Travel', 'School run'], sub: 'ONE BAG · THREE SCENES', caption: 'One bag, three lives.' },
+    { kind: 'product', lines: ['Vegetable-', 'tanned leather'], sub: 'SOFT EVERY WEEK · AGES WITH YOU', caption: '13 pockets, plus a dedicated laptop sleeve.', stats: ['14 IN', '13 POCKETS', 'LEATHER'] },
+    { kind: 'split', lines: ['Fits it all', 'No bulge'], caption: 'Commute, travel, school run. All in.', labels: ['Fits all', 'No bulge'] },
+    { kind: 'cta', lines: ['One bag,', 'three lives.'], sub: 'AER', caption: 'Three colors. Walk out the door.' },
+  ],
+  lamp: [
+    { kind: 'hook', lines: ['30 yuan,', 'new rental.'], sub: 'MORI · AMBIENT AROMA LAMP', caption: "My landlord's beat-up rental? I fixed it for 30 yuan." },
+    { kind: 'split', lines: ['Lights off', 'Lights on'], caption: 'One lamp. That is it.', labels: ['Off', 'On'] },
+    { kind: 'product', lines: ['Three warm', 'levels'], sub: 'STEPLESS DIMMING · AROMA · TIMER', caption: 'Not a new apartment. New light.', stats: ['3 LEVELS', 'DIMMABLE', 'TIMER'] },
+    { kind: 'mood', lines: ['Ten minutes', 'before bed,', 'the room is quiet.'], sub: 'SLEEP MODE · 2700K', caption: 'The moment the big light goes off, work leaves.' },
+    { kind: 'cta', lines: ['30 yuan.', 'Start with', 'the mood.'], sub: 'MORI', caption: 'Tap below. Try one first.' },
+  ],
+};
+
+const CATEGORY_EN: Record<string, string> = {
+  glow: 'BEAUTY · SKINCARE',
+  tote: 'FASHION · BAGS',
+  lamp: 'HOME · AMBIENCE',
+};
+
 const clamp = (value: number, min = 0, max = 1) => Math.min(max, Math.max(min, value));
 const ease = (value: number) => 1 - Math.pow(1 - clamp(value), 3);
 
@@ -46,7 +77,7 @@ function linesProgress(local: number, index: number) {
   return ease(clamp((local - 0.06 - index * 0.07) / 0.34));
 }
 
-function Scene({ study, content, local, index }: { study: CaseStudy; content: SceneContent; local: number; index: number }) {
+function Scene({ study, content, local, index, english }: { study: CaseStudy; content: SceneContent; local: number; index: number; english: boolean }) {
   const captionIn = ease(clamp((local - 0.05) / 0.2));
   const productIn = ease(clamp((local - 0.12) / 0.4));
   const drift = 1 + local * 0.035;
@@ -60,7 +91,7 @@ function Scene({ study, content, local, index }: { study: CaseStudy; content: Sc
           transform: `scale(${drift})`,
         }}
       >
-        <ProductArt kind={study.id as 'glow' | 'tote' | 'lamp'} accent={study.palette.accent} />
+        <ProductArt kind={study.id as 'glow' | 'tote' | 'lamp'} accent={study.palette.accent} english={english} />
       </div>
 
       <div className="scene-index">0{index + 1} / 05</div>
@@ -138,11 +169,11 @@ function Scene({ study, content, local, index }: { study: CaseStudy; content: Sc
           <div className="split-panels">
             <div className="split-panel before" style={{ opacity: ease(clamp(local / 0.25)) }}>
               <div className="split-art">
-                <ProductArt kind={study.id as 'glow' | 'tote' | 'lamp'} accent={study.palette.accent} />
+                <ProductArt kind={study.id as 'glow' | 'tote' | 'lamp'} accent={study.palette.accent} english={english} />
               </div>
               <span className="split-label">{content.labels?.[0]}</span>
               <span className="split-num">01</span>
-              <span className="split-foot">BEFORE · 原片</span>
+              <span className="split-foot">{english ? 'BEFORE' : 'BEFORE · 原片'}</span>
             </div>
             <div
               className="split-panel after"
@@ -152,11 +183,11 @@ function Scene({ study, content, local, index }: { study: CaseStudy; content: Sc
               }}
             >
               <div className="split-art">
-                <ProductArt kind={study.id as 'glow' | 'tote' | 'lamp'} accent={study.palette.accent} />
+                <ProductArt kind={study.id as 'glow' | 'tote' | 'lamp'} accent={study.palette.accent} english={english} />
               </div>
               <span className="split-label">{content.labels?.[1]}</span>
               <span className="split-num">07</span>
-              <span className="split-foot">AFTER · 复刻</span>
+              <span className="split-foot">{english ? 'AFTER' : 'AFTER · 复刻'}</span>
             </div>
           </div>
         </div>
@@ -184,7 +215,7 @@ function Scene({ study, content, local, index }: { study: CaseStudy; content: Sc
       <div className="film-caption" style={{ opacity: captionIn, transform: `translateY(${(1 - captionIn) * 18}px)` }}>
         <i />
         <span>{content.caption}</span>
-        <b>AI 生成</b>
+        <b>{english ? 'AI-GENERATED' : 'AI 生成'}</b>
       </div>
     </div>
   );
@@ -193,27 +224,29 @@ function Scene({ study, content, local, index }: { study: CaseStudy; content: Sc
 function Film() {
   const params = new URLSearchParams(window.location.search);
   const study = getCase(params.get('case') ?? 'glow');
-  const scenes = CONTENT[study.id];
+  const english = params.get('lang') === 'en';
+  const scenes = (english ? CONTENT_EN : CONTENT)[study.id];
   const [time, setTime] = useState(0);
 
   useEffect(() => {
+    document.documentElement.lang = english ? 'en' : 'zh-CN';
     (window as unknown as { __setTime: (value: number) => void }).__setTime = setTime;
     (window as unknown as { __filmReady: boolean }).__filmReady = true;
-  }, []);
+  }, [english]);
 
   const index = Math.max(
     0,
     study.structure.findIndex((segment) => time >= segment.start && time < segment.end),
   );
   const segment = study.structure[index];
-  const content = scenes[index];
+  const content = scenes[index] ?? scenes[0];
   const local = clamp((time - segment.start) / Math.max(0.01, segment.end - segment.start));
   const progress = clamp(time / study.duration);
 
   return (
     <div
       id="film"
-      className={`film film-${study.id}`}
+      className={`film film-${study.id}${english ? ' lang-en' : ''}`}
       style={{
         ['--accent' as string]: study.palette.accent,
         ['--paper' as string]: study.palette.paper,
@@ -234,11 +267,11 @@ function Film() {
         <i style={{ width: `${progress * 100}%` }} />
       </div>
 
-      <Scene study={study} content={content} local={local} index={index} />
+      <Scene study={study} content={content} local={local} index={index} english={english} />
 
       <footer className="film-bottom">
         <span>9:16 · 720P · 30FPS</span>
-        <span>{study.category}</span>
+        <span>{english ? CATEGORY_EN[study.id] : study.category}</span>
       </footer>
     </div>
   );

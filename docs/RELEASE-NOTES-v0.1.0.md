@@ -26,6 +26,8 @@ This is the first open-source MVP.
   with a dossier, a replica film and 10 variants.
 - **English-first README** — English case dossiers, pipeline artwork and agent
   quickstart; Chinese documentation is linked, not embedded.
+- **English demo cuts** — three 13–15s AI-labelled English films in
+  `public/media/en/`, with click-to-play posters in the README.
 - **Cost ledger** — every variant has a cost, and the batch shows total cost and
   estimated render time.
 

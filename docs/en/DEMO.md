@@ -7,12 +7,16 @@
 The current studio is Chinese-first. This script refers to controls by function rather than by label;
 run it against the local build and match the layout.
 
+The English demo cuts live in `public/media/en/`; the Chinese cuts live in `public/media/`. The
+click-to-play README posters are in `docs/en/demo-*.jpg`.
+
 ## 0. Thirty seconds before the demo
 
 ```bash
 npm install
 npm run build
 npm run preview     # http://127.0.0.1:4173
+npm run render:en   # optional: re-render the English cuts
 ```
 
 Check:

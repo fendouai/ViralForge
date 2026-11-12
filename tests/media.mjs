@@ -11,9 +11,14 @@ const EXPECTED = [
 ];
 
 let failed = 0;
+const LOCALES = [
+  { dir: '', prefix: '' },
+  { dir: 'en', prefix: 'en ' },
+];
+for (const locale of LOCALES) {
 for (const item of EXPECTED) {
-  const file = path.join(ROOT, 'public', 'media', `${item.id}.mp4`);
-  const cover = path.join(ROOT, 'public', 'media', `${item.id}-cover.jpg`);
+  const file = path.join(ROOT, 'public', 'media', locale.dir, `${item.id}.mp4`);
+  const cover = path.join(ROOT, 'public', 'media', locale.dir, `${item.id}-cover.jpg`);
   if (!fs.existsSync(file) || fs.statSync(file).size < 400_000) {
     console.log(`✗ ${item.id}: missing or too small`);
     failed += 1;
@@ -39,9 +44,10 @@ for (const item of EXPECTED) {
     ['cover', fs.existsSync(cover) && fs.statSync(cover).size > 10_000, cover ? 'ok' : 'missing'],
   ];
   for (const [name, ok, detail] of checks) {
-    console.log(`${ok ? '✓' : '✗'} ${item.id} ${name} · ${detail}`);
+    console.log(`${ok ? '✓' : '✗'} ${locale.prefix}${item.id} ${name} · ${detail}`);
     if (!ok) failed += 1;
   }
+}
 }
 if (failed) process.exit(1);
 console.log('\nmedia checks passed');

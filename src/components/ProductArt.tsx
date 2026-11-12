@@ -4,13 +4,14 @@ type Props = {
   kind: 'glow' | 'tote' | 'lamp';
   className?: string;
   accent?: string;
+  english?: boolean;
 };
 
-export function ProductArt({ kind, className, accent }: Props) {
+export function ProductArt({ kind, className, accent, english = false }: Props) {
   const uid = useId().replace(/:/g, '');
   if (kind === 'glow') {
     return (
-      <svg className={className} viewBox="0 0 240 360" role="img" aria-label="精华瓶产品示意">
+      <svg className={className} viewBox="0 0 240 360" role="img" aria-label={english ? "Serum bottle" : "精华瓶产品示意"}>
         <defs>
           <linearGradient id={`${uid}-glass`} x1="0" y1="0" x2="1" y2="1">
             <stop offset="0" stopColor="#F7F4E8" stopOpacity="0.96" />
@@ -36,7 +37,17 @@ export function ProductArt({ kind, className, accent }: Props) {
         <rect x="82" y="196" width="76" height="92" rx="4" fill="#F5F1E2" />
         <text x="120" y="221" textAnchor="middle" fontFamily="PingFang SC, sans-serif" fontSize="11" letterSpacing="3" fill="#1A1C15">GLOW LAB</text>
         <text x="120" y="245" textAnchor="middle" fontFamily="Helvetica Neue, sans-serif" fontSize="20" fontWeight="700" fill="#1A1C15">5%</text>
-        <text x="120" y="262" textAnchor="middle" fontFamily="PingFang SC, sans-serif" fontSize="9" letterSpacing="1" fill="#3C4034">烟酰胺精华</text>
+        <text
+          x="120"
+          y={english ? 260 : 262}
+          textAnchor="middle"
+          fontFamily="Helvetica Neue, PingFang SC, sans-serif"
+          fontSize={english ? 6.6 : 9}
+          letterSpacing={english ? 0.9 : 1}
+          fill="#3C4034"
+        >
+          {english ? 'NIACINAMIDE' : '烟酰胺精华'}
+        </text>
         <rect x="92" y="272" width="56" height="1" fill="#1A1C15" opacity="0.35" />
         <text x="120" y="285" textAnchor="middle" fontFamily="Helvetica Neue, sans-serif" fontSize="7" letterSpacing="2" fill="#3C4034">30 ML</text>
         <rect x="86" y="112" width="10" height="190" rx="5" fill="#FFFFFF" opacity="0.5" />
@@ -47,7 +58,7 @@ export function ProductArt({ kind, className, accent }: Props) {
 
   if (kind === 'tote') {
     return (
-      <svg className={className} viewBox="0 0 320 300" role="img" aria-label="托特包产品示意">
+      <svg className={className} viewBox="0 0 320 300" role="img" aria-label={english ? "Tote bag" : "托特包产品示意"}>
         <defs>
           <linearGradient id={`${uid}-leather`} x1="0" y1="0" x2="1" y2="1">
             <stop offset="0" stopColor="#3A2B21" />
@@ -77,7 +88,7 @@ export function ProductArt({ kind, className, accent }: Props) {
   }
 
   return (
-    <svg className={className} viewBox="0 0 300 320" role="img" aria-label="氛围灯产品示意">
+    <svg className={className} viewBox="0 0 300 320" role="img" aria-label={english ? "Ambient lamp" : "氛围灯产品示意"}>
       <defs>
         <radialGradient id={`${uid}-glow`} cx="50%" cy="50%" r="50%">
           <stop offset="0" stopColor={accent ?? '#FFB347'} stopOpacity="0.55" />

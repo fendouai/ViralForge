@@ -16,6 +16,8 @@ First open-source MVP.
   and per-variant cost ledger.
 - **Three demo cases**: beauty serum (GLOW LAB), commuter tote (AER), ambient lamp
   (MORI), each with a rendered 9:16 film and 10 variants.
+- **English demo cuts**: 13–15s English-language films in `public/media/en/`, plus
+  click-to-play posters in the README.
 - **Local analysis CLI**: `viralforge analyze` uses OpenCV shot detection and
   numpy tempo/energy analysis; no API key.
 - **MCP server**: `list_cases`, `get_case`, `analyze_video`, `build_project`.

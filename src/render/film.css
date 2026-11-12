@@ -422,3 +422,36 @@ body,
   opacity: 0.4;
   z-index: 4;
 }
+
+/* English demo cut: wider Latin copy needs a tighter scale. */
+.film.lang-en {
+  --sans: "Helvetica Neue", "Avenir Next", Arial, sans-serif;
+}
+
+.film.lang-en .film-kicker {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+}
+
+.film.lang-en .big-line {
+  font-size: 68px;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.film.lang-en .big-line.small {
+  font-size: 54px;
+}
+
+.film.lang-en .problem-line {
+  font-size: 76px;
+  letter-spacing: -0.045em;
+}
+
+.film.lang-en .scene-mood .big-line {
+  font-size: 56px;
+}
+
+.film.lang-en .film-caption span {
+  font-size: 13px;
+}

@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
  * Render the three demo films: DOM frames via Chromium, encode with FFmpeg.
- * Usage: npm run render [-- --case glow]
+ * Usage: npm run render [-- --case glow] [--lang en]
+ *        npm run render:en
  */
 import { chromium } from 'playwright';
 import { spawn } from 'node:child_process';
@@ -16,6 +17,9 @@ const FPS = 30;
 const WIDTH = 720;
 const HEIGHT = 1280;
 const BASE_URL = process.env.VIRALFORGE_URL || 'http://127.0.0.1:5173';
+const LANG_INDEX = process.argv.indexOf('--lang');
+const LANG = LANG_INDEX >= 0 ? process.argv[LANG_INDEX + 1] : (process.env.VIRALFORGE_LANG || 'zh');
+const SUBDIR = LANG === 'en' ? 'en' : '';
 
 const CASES = [
   { id: 'glow', duration: 15, coverAt: 6.8 },
@@ -55,7 +59,7 @@ function run(command, args) {
 }
 
 async function renderCase(browser, study) {
-  const frameDir = path.join(ROOT, '.render-tmp', study.id);
+  const frameDir = path.join(ROOT, '.render-tmp', `${study.id}-${LANG}`);
   fs.rmSync(frameDir, { recursive: true, force: true });
   fs.mkdirSync(frameDir, { recursive: true });
 
@@ -69,7 +73,7 @@ async function renderCase(browser, study) {
     if (message.type() === 'error') errors.push(message.text());
   });
 
-  await page.goto(`${BASE_URL}/render.html?case=${study.id}`, { waitUntil: 'networkidle' });
+  await page.goto(`${BASE_URL}/render.html?case=${study.id}${LANG === 'en' ? '&lang=en' : ''}`, { waitUntil: 'networkidle' });
   await page.waitForFunction(() => window.__filmReady === true);
   await page.evaluate(() => document.fonts.ready);
 
@@ -94,7 +98,7 @@ async function renderCase(browser, study) {
   if (errors.length) console.warn(`  ${study.id}: console errors`, errors.slice(0, 3));
 
   const audio = path.join(ROOT, 'assets', 'audio', `${study.id}.wav`);
-  const output = path.join(ROOT, 'public', 'media', `${study.id}.mp4`);
+  const output = path.join(ROOT, 'public', 'media', SUBDIR, `${study.id}.mp4`);
   fs.mkdirSync(path.dirname(output), { recursive: true });
   const args = [
     '-y',
@@ -113,7 +117,7 @@ async function renderCase(browser, study) {
   args.push(output);
   await run('ffmpeg', args);
 
-  const cover = path.join(ROOT, 'public', 'media', `${study.id}-cover.jpg`);
+  const cover = path.join(ROOT, 'public', 'media', SUBDIR, `${study.id}-cover.jpg`);
   await run('ffmpeg', [
     '-y',
     '-ss', String(study.coverAt),
@@ -141,13 +145,13 @@ async function main() {
     : await chromium.launch();
   try {
     for (const study of cases) {
-      console.log(`Rendering ${study.id} (${study.duration}s @ ${FPS}fps)…`);
+      console.log(`Rendering ${study.id} (${study.duration}s @ ${FPS}fps${LANG === 'en' ? ', English cut' : ''})…`);
       await renderCase(browser, study);
     }
   } finally {
     await browser.close();
   }
-  console.log('Done. MP4s are in public/media/.');
+  console.log(`Done. MP4s are in public/media/${SUBDIR ? `${SUBDIR}/` : ''}.`);
 }
 
 main().catch((error) => {
