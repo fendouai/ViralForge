@@ -373,6 +373,7 @@ function StudioBody() {
   };
 
   const generateVariants = () => {
+    clearTimers();
     setGeneratingVariants(true);
     setRevealed(0);
     const timersList: number[] = [];
