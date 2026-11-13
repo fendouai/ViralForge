@@ -30,13 +30,17 @@ Notes:
 }
 
 function analyze(args) {
-  const input = args.find((arg) => !arg.startsWith('-'));
+  const outIndex = args.indexOf('--out');
+  const out = outIndex >= 0 ? args[outIndex + 1] : null;
+  if (outIndex >= 0 && (!out || out.startsWith('-'))) {
+    console.error('Missing value for --out. Try: viralforge analyze ./video.mp4 --out dna.json');
+    process.exit(2);
+  }
+  const input = args.find((arg, index) => !arg.startsWith('-') && index !== outIndex + 1);
   if (!input) {
     console.error('Missing video path. Try: viralforge analyze ./video.mp4');
     process.exit(2);
   }
-  const outIndex = args.indexOf('--out');
-  const out = outIndex >= 0 ? args[outIndex + 1] : null;
   const python = spawnSync('python3', [path.join(ROOT, 'scripts', 'analyze.py'), input, ...(out ? ['--out', out] : [])], {
     stdio: 'inherit',
   });
@@ -49,7 +53,13 @@ function report(args) {
     console.error('Missing dna.json. Run: viralforge analyze ./video.mp4 --out dna.json');
     process.exit(2);
   }
-  const dna = JSON.parse(fs.readFileSync(file, 'utf8'));
+  let dna;
+  try {
+    dna = JSON.parse(fs.readFileSync(file, 'utf8'));
+  } catch {
+    console.error(`Invalid dna.json: ${file}. Re-run: viralforge analyze ./video.mp4 --out dna.json`);
+    process.exit(2);
+  }
   const shots = dna.shots ?? [];
   const audio = dna.audio ?? {};
   const lines = [
