@@ -599,3 +599,5 @@ can be reviewed separately.
 ---
 
 <p align="center"><em>Clone the structure. Not the footage.</em></p>
+
+<!-- GitHub-hosted demo videos are embedded above. -->
