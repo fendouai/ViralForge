@@ -1,0 +1,50 @@
+[
+  {
+    "file": "campus-original.mp4",
+    "duration": 10.08,
+    "width": 1280,
+    "height": 720,
+    "bytes": 18634829,
+    "decode": "passed"
+  },
+  {
+    "file": "campus-replaced.mp4",
+    "duration": 10.08,
+    "width": 1280,
+    "height": 720,
+    "bytes": 17928979,
+    "decode": "passed"
+  },
+  {
+    "file": "tennis-original.mp4",
+    "duration": 10.08,
+    "width": 1280,
+    "height": 720,
+    "bytes": 15366772,
+    "decode": "passed"
+  },
+  {
+    "file": "tennis-replaced.mp4",
+    "duration": 10.08,
+    "width": 1280,
+    "height": 720,
+    "bytes": 15526151,
+    "decode": "passed"
+  },
+  {
+    "file": "beach-original.mp4",
+    "duration": 10.08,
+    "width": 1280,
+    "height": 720,
+    "bytes": 13971569,
+    "decode": "passed"
+  },
+  {
+    "file": "beach-replaced.mp4",
+    "duration": 10.08,
+    "width": 1280,
+    "height": 720,
+    "bytes": 16553506,
+    "decode": "passed"
+  }
+]

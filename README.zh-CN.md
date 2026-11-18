@@ -49,6 +49,20 @@
 [Demo details / 素材说明](./artifacts/viralforge-demo/README.md)
 
 
+### 三组场景复刻：校园 · 网球 · 海边
+
+同一镜头结构，更换人物、商品和环境。每组原版和替换版均约 10 秒；点击封面播放。
+
+| 场景 / Scene | 原版 / Original | 替换版 / Replica |
+| --- | --- | --- |
+| 校园：藏蓝帆布 → 酒红皮革 | [![campus-original](./artifacts/viralforge-demo/campus-original.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/campus-original.mp4) | [![campus-replaced](./artifacts/viralforge-demo/campus-replaced.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/campus-replaced.mp4) |
+| 网球：蓝色硬地 / 米色包 → 红土 / 墨绿包 | [![tennis-original](./artifacts/viralforge-demo/tennis-original.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/tennis-original.mp4) | [![tennis-replaced](./artifacts/viralforge-demo/tennis-replaced.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/tennis-replaced.mp4) |
+| 海边：白天 / 奶白包 → 夕阳 / 天蓝包 | [![beach-original](./artifacts/viralforge-demo/beach-original.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/beach-original.mp4) | [![beach-replaced](./artifacts/viralforge-demo/beach-replaced.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/beach-replaced.mp4) |
+
+人物均设定为虚构成年女大学生。每条替换版实际引用对应原版视频，由即梦手动生成，展示目标效果，并非当前 ViralForge 的自动模型调用。
+
+[制作说明 / Production notes](./artifacts/viralforge-demo/scenes.md)
+
 三条 13–15 秒中文成片。点封面直接在浏览器播放，无需登录，也不搬运平台原片。
 
 <p align="center">

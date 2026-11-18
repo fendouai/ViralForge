@@ -47,12 +47,26 @@ Preserve the shot structure while replacing the person, product and setting. Bot
 
 | Original · brown tote · bedroom | Replica · grey-green tote · café |
 | --- | --- |
-| [![Original · brown tote · bedroom](./artifacts/viralforge-demo/original.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/original.mp4) | [![Replica · grey-green tote · café](./artifacts/viralforge-demo/replaced.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/replaced.mp4) |
+| [![Original · brown tote · bedroom](./docs/en/live-original.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/original.mp4) | [![Replica · grey-green tote · café](./docs/en/live-replaced.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/replaced.mp4) |
 
 Created manually with Jimeng Seedance 2.0 mini; the replica uses the original as a video reference. These clips illustrate the intended workflow, not an automated ViralForge model integration. Exact shot timing has not yet been verified.
 
-[Demo details / 素材说明](./artifacts/viralforge-demo/README.md)
+[Demo details](./artifacts/viralforge-demo/README.md)
 
+
+### Three scene remixes: campus · tennis · beach
+
+Same shot structure, new person, product and setting. Each pair contains two ~10-second clips. Click a poster to play.
+
+| Scene | Original | Replica |
+| --- | --- | --- |
+| Campus: navy canvas → burgundy leather | [![campus-original](./docs/en/live-campus-original.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/campus-original.mp4) | [![campus-replaced](./docs/en/live-campus-replaced.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/campus-replaced.mp4) |
+| Tennis: blue court / beige tote → clay / green tote | [![tennis-original](./docs/en/live-tennis-original.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/tennis-original.mp4) | [![tennis-replaced](./docs/en/live-tennis-replaced.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/tennis-replaced.mp4) |
+| Beach: daylight / cream tote → sunset / blue tote | [![beach-original](./docs/en/live-beach-original.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/beach-original.mp4) | [![beach-replaced](./docs/en/live-beach-replaced.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/beach-replaced.mp4) |
+
+Characters are fictional adult university students. Each replica was manually generated in Jimeng using its paired original as a video reference; this demonstrates the intended effect, not an automated ViralForge model call.
+
+[Production notes](./artifacts/viralforge-demo/scenes.md)
 
 Three 13–15s English cuts. Click a poster to play the MP4 in your browser — no sign-in, no
 platform footage.
