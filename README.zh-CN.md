@@ -36,6 +36,19 @@
 
 ## 看演示
 
+### 真人实拍风格：原片 → 替换版
+
+保留分镜结构，替换人物、商品与场景。两条视频均约 10 秒，16:9、720P。点击封面播放。
+
+| 原版 · 棕色托特包 · 卧室 | 替换版 · 灰绿色托特包 · 咖啡馆 |
+| --- | --- |
+| [![原版 · 棕色托特包 · 卧室](./artifacts/viralforge-demo/original.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/original.mp4) | [![替换版 · 灰绿色托特包 · 咖啡馆](./artifacts/viralforge-demo/replaced.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/replaced.mp4) |
+
+素材由即梦 Seedance 2.0 mini 手动生成，替换版实际引用原版视频，展示目标工作流；不代表当前 ViralForge 已自动接入生成模型。镜头切点尚未逐镜复核。
+
+[Demo details / 素材说明](./artifacts/viralforge-demo/README.md)
+
+
 三条 13–15 秒中文成片。点封面直接在浏览器播放，无需登录，也不搬运平台原片。
 
 <p align="center">

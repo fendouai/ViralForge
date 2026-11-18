@@ -41,6 +41,19 @@ documentation and agent surfaces are English-first.
 
 ## Watch the demos
 
+### Live-action reference → replica
+
+Preserve the shot structure while replacing the person, product and setting. Both clips are about 10 seconds, 16:9, 720p.
+
+| Original · brown tote · bedroom | Replica · grey-green tote · café |
+| --- | --- |
+| [![Original · brown tote · bedroom](./artifacts/viralforge-demo/original.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/original.mp4) | [![Replica · grey-green tote · café](./artifacts/viralforge-demo/replaced.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/replaced.mp4) |
+
+Created manually with Jimeng Seedance 2.0 mini; the replica uses the original as a video reference. These clips illustrate the intended workflow, not an automated ViralForge model integration. Exact shot timing has not yet been verified.
+
+[Demo details / 素材说明](./artifacts/viralforge-demo/README.md)
+
+
 Three 13–15s English cuts. Click a poster to play the MP4 in your browser — no sign-in, no
 platform footage.
 
