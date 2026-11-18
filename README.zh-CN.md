@@ -38,11 +38,15 @@
 
 ### 真人实拍风格：原片 → 替换版
 
-保留分镜结构，替换人物、商品与场景。两条视频均约 10 秒，16:9、720P。点击封面播放。
+保留分镜结构，替换人物、商品与场景。两条视频均约 10 秒，16:9、720P。点击播放器即可在 README 内播放。
 
-| 原版 · 棕色托特包 · 卧室 | 替换版 · 灰绿色托特包 · 咖啡馆 |
-| --- | --- |
-| [![原版 · 棕色托特包 · 卧室](./artifacts/viralforge-demo/original.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/original.mp4) | [![替换版 · 灰绿色托特包 · 咖啡馆](./artifacts/viralforge-demo/replaced.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/replaced.mp4) |
+<table>
+  <tr><th>原版 · 棕色托特包 · 卧室</th><th>替换版 · 灰绿色托特包 · 咖啡馆</th></tr>
+  <tr>
+    <td><video src="https://github.com/user-attachments/assets/20650bdf-e3ca-40d9-ab2d-6431bab14ba0" controls muted playsinline preload="metadata" aria-label="original"></video></td>
+    <td><video src="https://github.com/user-attachments/assets/437d7d8a-c1b8-4f66-b602-f0cf1b6a15c6" controls muted playsinline preload="metadata" aria-label="replaced"></video></td>
+  </tr>
+</table>
 
 素材由即梦 Seedance 2.0 mini 手动生成，替换版实际引用原版视频，展示目标工作流；不代表当前 ViralForge 已自动接入生成模型。镜头切点尚未逐镜复核。
 
@@ -51,13 +55,26 @@
 
 ### 三组场景复刻：校园 · 网球 · 海边
 
-同一镜头结构，更换人物、商品和环境。每组原版和替换版均约 10 秒；点击封面播放。
+同一镜头结构，更换人物、商品和环境。每组原版和替换版均约 10 秒；点击播放器即可在 README 内播放。
 
-| 场景 / Scene | 原版 / Original | 替换版 / Replica |
-| --- | --- | --- |
-| 校园：藏蓝帆布 → 酒红皮革 | [![campus-original](./artifacts/viralforge-demo/campus-original.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/campus-original.mp4) | [![campus-replaced](./artifacts/viralforge-demo/campus-replaced.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/campus-replaced.mp4) |
-| 网球：蓝色硬地 / 米色包 → 红土 / 墨绿包 | [![tennis-original](./artifacts/viralforge-demo/tennis-original.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/tennis-original.mp4) | [![tennis-replaced](./artifacts/viralforge-demo/tennis-replaced.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/tennis-replaced.mp4) |
-| 海边：白天 / 奶白包 → 夕阳 / 天蓝包 | [![beach-original](./artifacts/viralforge-demo/beach-original.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/beach-original.mp4) | [![beach-replaced](./artifacts/viralforge-demo/beach-replaced.jpg)](https://github.com/fendouai/ViralForge/raw/refs/heads/main/artifacts/viralforge-demo/beach-replaced.mp4) |
+<table>
+  <tr><th>场景 / Scene</th><th>原版 / Original</th><th>替换版 / Replica</th></tr>
+  <tr>
+    <td>校园：藏蓝帆布 → 酒红皮革</td>
+    <td><video src="https://github.com/user-attachments/assets/835c2082-8611-4e8a-a9ff-6aac6ad63f55" controls muted playsinline preload="metadata" aria-label="campus-original"></video></td>
+    <td><video src="https://github.com/user-attachments/assets/27f67fd0-f56f-41dc-9cf3-79cd9269350c" controls muted playsinline preload="metadata" aria-label="campus-replaced"></video></td>
+  </tr>
+  <tr>
+    <td>网球：蓝色硬地 / 米色包 → 红土 / 墨绿包</td>
+    <td><video src="https://github.com/user-attachments/assets/6892c59e-eb04-4b83-9a66-b9f42387101c" controls muted playsinline preload="metadata" aria-label="tennis-original"></video></td>
+    <td><video src="https://github.com/user-attachments/assets/ca53d14b-3ad0-4630-b5ad-12a4848a061d" controls muted playsinline preload="metadata" aria-label="tennis-replaced"></video></td>
+  </tr>
+  <tr>
+    <td>海边：白天 / 奶白包 → 夕阳 / 天蓝包</td>
+    <td><video src="https://github.com/user-attachments/assets/2c491698-b9b2-48a6-ae3c-665a1f7bae39" controls muted playsinline preload="metadata" aria-label="beach-original"></video></td>
+    <td><video src="https://github.com/user-attachments/assets/1665998d-218b-49c4-bf61-08f9101fec12" controls muted playsinline preload="metadata" aria-label="beach-replaced"></video></td>
+  </tr>
+</table>
 
 人物均设定为虚构成年女大学生。每条替换版实际引用对应原版视频，由即梦手动生成，展示目标效果，并非当前 ViralForge 的自动模型调用。
 
