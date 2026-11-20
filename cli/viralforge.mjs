@@ -36,7 +36,7 @@ function analyze(args) {
     console.error('Missing value for --out. Try: viralforge analyze ./video.mp4 --out dna.json');
     process.exit(2);
   }
-  const input = args.find((arg, index) => !arg.startsWith('-') && index !== outIndex + 1);
+  const input = args.find((arg, index) => !arg.startsWith('-') && (outIndex < 0 || index !== outIndex + 1));
   if (!input) {
     console.error('Missing video path. Try: viralforge analyze ./video.mp4');
     process.exit(2);
