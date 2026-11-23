@@ -607,3 +607,7 @@ can be reviewed separately.
 ## Related project
 
 [Whiteboard AI Tutor](https://github.com/molly554/whiteboard-ai-tutor) — An open-source whiteboard AI tutor with animated lessons and interactive playback.
+
+## Promotional clips
+
+[English](./artifacts/promotion/viralforge-en.mp4) · [Chinese](./artifacts/promotion/viralforge-zh.mp4) · [Production and submission status](./artifacts/promotion/README.md)

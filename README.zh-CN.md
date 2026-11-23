@@ -537,3 +537,7 @@ ViralForge 不包含、也不派生自 Hypit 代码。Hypit 的自定义许可�
 ## 相关项目
 
 [Whiteboard AI Tutor](https://github.com/molly554/whiteboard-ai-tutor) — 开源白板 AI 导师，支持动画讲解和交互播放。
+
+## 推广短片
+
+[English](./artifacts/promotion/viralforge-en.mp4) · [Chinese](./artifacts/promotion/viralforge-zh.mp4) · [Production and submission status](./artifacts/promotion/README.md)
