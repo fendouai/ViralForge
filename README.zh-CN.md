@@ -21,6 +21,8 @@
 
 > 贴一个爆款视频链接 → 拆出「爆款基因报告」→ 用你的产品和脚本一键复刻 → 得到可编辑工程，而不是一条黑盒 MP4 → 批量出 10 个标好成本的变体。
 
+**官网：** [WearAI AI 视频生成器](https://wearai.net/ai-video-generator)
+
 **ViralForge 是一个 Agent-native 的短视频拆解与复刻工作台。** 它先回答「这条视频为什么能留住人」，
 再把钩子、逐镜结构、词级锚点、节拍、字幕、情绪曲线和转化话术变成一份可分享的 **爆款基因报告**；
 然后用你的产品与脚本 **一键复刻** 同一套结构，输出可编辑的 VFML 工程；最后生成 **10 个带成本的变体**
@@ -531,3 +533,7 @@ ViralForge 不包含、也不派生自 Hypit 代码。Hypit 的自定义许可�
 ---
 
 <p align="center"><em>复刻结构，不搬运画面。</em></p>
+
+## 相关项目
+
+[Whiteboard AI Tutor](https://github.com/molly554/whiteboard-ai-tutor) — 开源白板 AI 导师，支持动画讲解和交互播放。

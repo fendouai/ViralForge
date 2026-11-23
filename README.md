@@ -24,6 +24,8 @@
   <img src="./docs/en/hero.jpg" alt="ViralForge turns a viral link into a Viral DNA report, then into an editable replica project and 10 costed variants" />
 </p>
 
+**Website:** [WearAI AI Video Generator](https://wearai.net/ai-video-generator)
+
 **ViralForge is an agent-native studio for viral short videos.** Paste a link or a local file and
 get a **Viral DNA report** that deconstructs the video script: the hook, shot-by-shot structure,
 word anchors, beat grid, caption style, emotional curve and conversion logic. Replace the product
@@ -601,3 +603,7 @@ can be reviewed separately.
 <p align="center"><em>Clone the structure. Not the footage.</em></p>
 
 <!-- GitHub-hosted demo videos are embedded above. -->
+
+## Related project
+
+[Whiteboard AI Tutor](https://github.com/molly554/whiteboard-ai-tutor) — An open-source whiteboard AI tutor with animated lessons and interactive playback.
